@@ -55,9 +55,3 @@ Ce projet complet a été réalisé dans le cadre de ma formation en développem
 - Travailler avec des fichiers, des API et des bases de données
 - Créer des interfaces interactives avec JavaScript
 
----
-
-## 📎 Auteur
-
-**Nour Hassan Abdillahi**  
-📍 Master RSI 2023-2025
