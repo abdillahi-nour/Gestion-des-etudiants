@@ -1,0 +1,59 @@
+
+        .navbar {
+            background-color: #303f9b; /* Couleur de fond de la barre de navigation supérieure */
+            padding: 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar h3 {
+            margin: 0;
+            color: #fff;
+        }
+
+        .navbar form {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .navbar .form-control {
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 180px;
+            position: fixed;
+            top: 56px; /* Ajustez en fonction de la hauteur de la navbar */
+            left: 0;
+            padding-top: 20px;
+            background-color: #303f9b; /* Couleur de fond de la barre de navigation latérale */
+            z-index: 999; /* Pour s'assurer qu'elle soit au-dessus du contenu */
+        }
+
+        .sidebar a {
+            padding: 13px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #303f9f; /* Couleur de fond au survol */
+        }
+
+        .content {
+            margin-left: 200px; /* Ajustez la marge gauche pour éviter le chevauchement */
+            padding: 30px;
+            padding-top: 80px; /* Ajustez en fonction de la hauteur de la navbar */
+        }
+   

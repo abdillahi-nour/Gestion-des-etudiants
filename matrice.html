@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice de Matrices</title>
+    <!-- Inclure Bootstrap pour le style -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            margin-bottom: 30px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .card-custom {
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-2 d-flex justify-content-center">
+        <div class="w-100" style="max-width: 900px;">
+            <h3 class="text-center mb-4">Calculatrice de Matrices</h3>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <div class="card card-custom">
+                        <div class="card-header">Matrice N°1</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="rows1">Nombre de lignes :</label>
+                                <input type="number" class="form-control" id="rows1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cols1">Nombre de colonnes :</label>
+                                <input type="number" class="form-control" id="cols1" required>
+                            </div>
+                            <button class="btn btn-custom" onclick="generateValues('matrix1')">Générer des valeurs aléatoires</button>
+                            <button class="btn btn-secondary ml-2" onclick="clearValues('matrix1')">Annuler</button>
+                            <div class="form-group mt-3">
+                                <label for="matrix1Values">Valeurs générées :</label>
+                                <textarea class="form-control" id="matrix1Values" rows="5" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-custom">
+                        <div class="card-header">Matrice N°2</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="rows2">Nombre de lignes :</label>
+                                <input type="number" class="form-control" id="rows2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cols2">Nombre de colonnes :</label>
+                                <input type="number" class="form-control" id="cols2" required>
+                            </div>
+                            <button class="btn btn-custom" onclick="generateValues('matrix2')">Générer des valeurs aléatoires</button>
+                            <button class="btn btn-secondary ml-2" onclick="clearValues('matrix2')">Annuler</button>
+                            <div class="form-group mt-3">
+                                <label for="matrix2Values">Valeurs générées :</label>
+                                <textarea class="form-control" id="matrix2Values" rows="5" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6 text-center">
+                    <button class="btn btn-custom mb-3" onclick="calculateSum()">Calculer Somme</button>
+                    <div class="form-group">
+                        <label for="sumResult">Résultat de la Somme :</label>
+                        <textarea class="form-control" id="sumResult" rows="5" readonly></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <button class="btn btn-custom mb-3" onclick="calculateProduct()">Calculer Produit</button>
+                    <div class="form-group">
+                        <label for="productResult">Résultat du Produit :</label>
+                        <textarea class="form-control" id="productResult" rows="5" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclure jQuery et Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Inclure le script JS -->
+    <script>
+        function generateValues(matrixId) {
+            let rows = parseInt(document.getElementById(`rows${matrixId.charAt(matrixId.length - 1)}`).value);
+            let cols = parseInt(document.getElementById(`cols${matrixId.charAt(matrixId.length - 1)}`).value);
+            let values = [];
+
+            for (let i = 0; i < rows; i++) {
+                let row = [];
+                for (let j = 0; j < cols; j++) {
+                    row.push(Math.floor(Math.random() * 100)); // Générer des valeurs aléatoires entre 0 et 99
+                }
+                values.push(row);
+            }
+
+            document.getElementById(`${matrixId}Values`).value = values.map(row => row.join(' ')).join('\n');
+        }
+
+        function parseMatrix(matrixId) {
+            let values = document.getElementById(`${matrixId}Values`).value.split('\n').map(row => row.split(' ').map(Number));
+            return values;
+        }
+
+        function calculateSum() {
+            let matrix1 = parseMatrix('matrix1');
+            let matrix2 = parseMatrix('matrix2');
+
+            if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
+                alert('Les dimensions des matrices doivent être identiques pour la somme.');
+                return;
+            }
+
+            let sumMatrix = [];
+            for (let i = 0; i < matrix1.length; i++) {
+                let row = [];
+                for (let j = 0; j < matrix1[0].length; j++) {
+                    row.push(matrix1[i][j] + matrix2[i][j]);
+                }
+                sumMatrix.push(row);
+            }
+
+            document.getElementById('sumResult').value = sumMatrix.map(row => row.join(' ')).join('\n');
+        }
+
+        function calculateProduct() {
+            let matrix1 = parseMatrix('matrix1');
+            let matrix2 = parseMatrix('matrix2');
+
+            if (matrix1[0].length !== matrix2.length) {
+                alert('Le nombre de colonnes de la première matrice doit être égal au nombre de lignes de la deuxième matrice.');
+                return;
+            }
+
+            let productMatrix = [];
+            for (let i = 0; i < matrix1.length; i++) {
+                let row = [];
+                for (let j = 0; j < matrix2[0].length; j++) {
+                    let sum = 0;
+                    for (let k = 0; k < matrix1[0].length; k++) {
+                        sum += matrix1[i][k] * matrix2[k][j];
+                    }
+                    row.push(sum);
+                }
+                productMatrix.push(row);
+            }
+
+            document.getElementById('productResult').value = productMatrix.map(row => row.join(' ')).join('\n');
+        }
+
+        function clearValues(matrixId) {
+            document.getElementById(`rows${matrixId.charAt(matrixId.length - 1)}`).value = '';
+            document.getElementById(`cols${matrixId.charAt(matrixId.length - 1)}`).value = '';
+            document.getElementById(`${matrixId}Values`).value = '';
+        }
+    </script>
+</body>
+</html>

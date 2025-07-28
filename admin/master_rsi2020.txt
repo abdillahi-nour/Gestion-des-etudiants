@@ -1,0 +1,4 @@
+Nom: ahmed, Prénom: hassan, CNE: w22727, Module 1: 3, Module 2: 2, Module 3: 2, Moyenne: 2.33
+Nom: samatar, Prénom: sam, CNE: w22727, Module 1: 11, Module 2: 12, Module 3: 14, Moyenne: 12.33
+Nom: Houssein, Prénom: mohamed, CNE: w22727, Module 1: 17, Module 2: 14, Module 3: 15, Moyenne: 15.33
+Nom: nouveau, Prénom: nouveau, CNE: nv122, Module 1: 12, Module 2: 11, Module 3: 13, Moyenne: 12
