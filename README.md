@@ -1,52 +1,63 @@
-# 🎓 Projet de Gestion des Étudiants
+# 🎓 Projet Web – Gestion des Étudiants
+> Réalisé par **Nour Hassan Abdillahi**
 
-Ce projet est une application web réalisée dans le cadre de ma formation pour maîtriser PHP, JavaScript, et les interactions front-end/back-end. Elle permet la gestion complète des étudiants avec des interfaces pour l’administrateur et les étudiants.
-
-## 📽️ Vidéos de démonstration
-
-- 👉 [Partie Code](LIEN_VERS_VIDEO_1)
-- 👉 [Résultat Final](LIEN_VERS_VIDEO_2)
+Ce projet complet a été réalisé dans le cadre de ma formation en développement web. Il permet la **gestion des étudiants** côté administrateur et la **consultation d’un espace étudiant**, avec des fonctionnalités avancées (quiz, chatbot, CV, carte…).
 
 ---
 
-## 🧑‍💼 PARTIE I : ADMINISTRATEUR
+## 📽️ Démonstrations vidéos
 
-- Ajouter, afficher, supprimer un étudiant
-- Géolocalisation à l’aide de l’API Google Maps
-- Statistiques via Chart.js
-- Manipulation de formulaires TXT
-- Gestion d’images (ajouter, consulter, supprimer)
+- 🔧 [Code – Partie 2](partie2-code.mp4)
+- 🖥️ [Résultat final](partie-resultat.mp4)
 
-## 👨‍🎓 PARTIE II : ÉTUDIANT
+---
 
-- S’authentifier / S’inscrire
-- Passer des quiz (quiz1 / quiz2)
-- Manipulation de matrices
-- Affichage du profil
-- Consulter son CV
-- Utiliser un chatbot
+## 🗺️ Plan global du projet
+
+![Plan du projet](plan.png)
+
+---
+
+## 👨‍💼 Partie Administrateur
+
+- 📋 Ajouter / Supprimer un étudiant
+- 📍 Géolocalisation des étudiants (Google Maps API)
+- 📊 Statistiques via Chart.js
+- 📁 Manipulation de fichiers texte (formulaire)
+- 🖼️ Gestion des images (ajouter, consulter, supprimer)
+
+## 👨‍🎓 Partie Étudiant
+
+- 🔐 Authentification / inscription
+- 🧠 Quiz dynamiques (quiz1 et quiz2)
+- 🧮 Matrices / Calculs
+- 📄 Affichage du profil
+- 📎 CV numérique
+- 🤖 Chatbot interactif
 
 ---
 
 ## 🛠️ Technologies utilisées
 
-- **Frontend** : HTML, CSS, Bootstrap, JavaScript
-- **Backend** : PHP
-- **Librairies** : Chart.js, Google Maps API
-- **Base de données** : MySQL
+| Frontend        | Backend | Données      |
+|-----------------|---------|--------------|
+| HTML / CSS / JS | PHP     | MySQL        |
+| Bootstrap       |         |              |
+| Chart.js        |         |              |
+| Google Maps API |         |              |
 
 ---
 
-## 📸 Captures d’écran
+## 🧠 Objectifs pédagogiques
 
-| Espace Admin | Espace Étudiant |
-|--------------|------------------|
-| ![Admin](admin.png) | ![Etudiant](images/etudiant.png) |
+- Savoir développer une application PHP complète (front + back)
+- Gérer plusieurs interfaces utilisateurs
+- Travailler avec des fichiers, des API et des bases de données
+- Créer des interfaces interactives avec JavaScript
 
 ---
 
-## 💡 Objectifs pédagogiques
+## 📎 Auteur
 
-- Maîtriser les interactions client/serveur avec PHP
-- Exploiter les API externes (Google Maps)
-- Créer des interfaces dynamiques (JavaScript/Chart.js)
+**Nour Hassan Abdillahi**  
+📍 Master RSI 2023-2025
